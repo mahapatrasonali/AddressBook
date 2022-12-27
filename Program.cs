@@ -19,7 +19,8 @@ namespace AddressBookSystem
             Console.WriteLine("Select any one from below options \n" +
                 "Press 1 : to Create/Add a new contact\n" +
                 "Press 2 : to Edit/Modify any existing contact\n" +
-                "Press 3 : to view all the contacts in Address book.");
+                "Press 3 : to view all the contacts in Address book.\n" +
+                "Press 4 : to delete any existing contact");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -32,14 +33,19 @@ namespace AddressBookSystem
                 case 3:
                     contact.ListPeople();       //viewing all contacts.
                     break;
+                case 4:
+                    contact.RemovePerson();     //deleting existing contact .
+                    break;
                 default:
                     Console.WriteLine("Invalid Option selected , Please try again ");
                     break;
             }
             goto ReEnteringApp;     //for repeatation of same task from start point have used goto control statement .
         }
+        
+        }
     }
-}
+
        
     
 
