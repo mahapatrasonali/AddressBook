@@ -10,27 +10,43 @@ namespace AddressBookSystem
 {
     public class Program
     {
-        static void Main(string[] args)
-        {
-              Console.WriteLine("Welcome to the Address Book System Problem.");
-            CreateContact contact = new CreateContact()
-            {
 
-                FirstName = Console.ReadLine(),
-                LastName = Console.ReadLine(),
-                Address = Console.ReadLine(),
-                City = Console.ReadLine(),
-                State = Console.ReadLine(),
-                Zip = Convert.ToInt64(Console.ReadLine()),
-                PhoneNumber = Console.ReadLine(),
-                Email = Console.ReadLine(),
-                
-             };
-            
-           Console.WriteLine("Contact Details : " + "\n" + "First Name : " + contact.FirstName + "\n" + "Last Name : " + contact.LastName  + "\n" + "Address is : " + contact.Address + "\n" + "City is : " + contact.City + "\n" + "State is : " + contact.State  + "\n" + "Zip is : " + contact.Zip  + "\n" + "Phone Number is :" + contact.PhoneNumber + "\n" + "Email is : " + contact.Email);
+
+        public static void WelcomeMessage()
+        {
+            Console.WriteLine("Welcome to Address Book Program!\n");
+        }
+        public static void CreatingContact()
+        {
+            Console.WriteLine("Enter your First Name");
+            string firstName = Console.ReadLine();
+            Console.WriteLine("Enter your Last Name");
+            string lastName = Console.ReadLine();
+            Console.WriteLine("Enter your Address");
+            string address = Console.ReadLine();
+            Console.WriteLine("Enter your Phone_Number");
+            double phoneNo = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter your Email_Id");
+            string emailId = Console.ReadLine();
+            Console.WriteLine($"\n First Name : {firstName}\n Last Name : {lastName}\n Address : {address}\n Phone Number : {phoneNo}\n Email ID : {emailId}");
+        }
+        public static void Main(string[] args)
+        {
+            WelcomeMessage();
+            CreatingContact();
         }
     }
 }
+        
+
+
+    
+
+          
+    
+            
+          
+
         
          
       
