@@ -11,8 +11,8 @@ namespace AddressBookSystem
     {
         Contact contact = new Contact();
         List<Contact> people = new List<Contact>();
-      
-        public void AddPerson()     
+
+        public void AddPerson()
         {
             contact = new Contact();
             Console.WriteLine("Enter your First Name");
@@ -110,8 +110,39 @@ namespace AddressBookSystem
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
         }
+        public void RemovePerson()      //Delete an existing Contact 
+        {
+            Console.WriteLine("Enter the first name of person to be removed");
+            string verifyingFirstName = Console.ReadLine();
+            Console.WriteLine("Enter the last name of person to be removed");
+            string verifyingLastName = Console.ReadLine();
+            foreach (var person in people)
+            {
+                if (person.firstName.Equals(verifyingFirstName) && person.lastName.Equals(verifyingLastName))
+                {
+                    Console.WriteLine("Are you sure you want to remove this person from your address book ? (Y/N)");
+                    if (Console.ReadKey().Key == ConsoleKey.Y)
+                    {
+                        people.Remove(person);
+                        Console.WriteLine("Person removed .Press any key to continue.\n");
+                        return;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("That person could not be found.Press any key to continue to try again ");
+                    Console.ReadKey();
+                    return;
+                }
+            }
+        }
     }
 }
+
 
     
 
